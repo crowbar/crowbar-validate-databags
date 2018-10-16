@@ -1,0 +1,9 @@
+{
+  "type": "int",
+  "required": true,
+  "mapping": {
+    "id": { "type": "str", "required": true, "pattern": "/^test$/" },
+    "description": { "type": "str", "required": true },
+    "attributes": { "type": "map", "required": true, "mapping": {}}
+  }
+}

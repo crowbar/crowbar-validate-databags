@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+require 'crowbar/validate/databags'
+
+if true
+    if ARGV.size != 1
+        puts "Must specify the dir where the files are to validate (i.e. /opt/dell/crowbar/data_bags/crowbar/)\n"
+        exit -4
+    end
+    if !File.exists?(ARGV[0])
+        puts "#{ARGV[0]} must exist\n"
+        exit -5
+     end
+
+    rc = Crowbar::Validate::Databags.validate(ARGV[0])
+    if rc.include?(-1)
+        puts "Schema validation failed.\n"
+    elif rc.include?(-2)
+        puts "Json validation failed.\n"
+    elif rc.include?(-3)
+        puts "Migration files validation failed.\n"
+    end
+    exit rc.min
+end

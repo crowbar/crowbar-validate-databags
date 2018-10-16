@@ -1,0 +1,9 @@
+{
+  "id": "test",
+  "description": "test for correct",
+  "attributes": {
+    "crowbar": {
+      "test": 1
+    }
+  }
+}

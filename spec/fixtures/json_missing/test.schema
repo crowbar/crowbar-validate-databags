@@ -1,0 +1,15 @@
+{
+  "type": "map",
+  "required": true,
+  "mapping": {
+    "id": { "type": "str", "required": true, "pattern": "/^test$/" },
+    "description": { "type": "str", "required": true },
+    "attributes": { "type": "map", "required": true, "mapping": {
+      "crowbar": { "type": "map", "required": true, "mapping": {
+        "test": { "type": "int", "required": true }
+      }
+      }
+    }
+    }
+  }
+}
