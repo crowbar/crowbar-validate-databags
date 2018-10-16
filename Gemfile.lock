@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     crowbar-validate-databags (0.1.0)
-      kwalify
+      kwalify (~> 0.7)
 
 GEM
   remote: https://rubygems.org/

@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Validates databags of crowbar.}
   spec.homepage      = "http://github.com/itxaka/crowbar-validate-databags"
-  spec.license       = "GPL2"
+  spec.license       = "GPL-2.0"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.executables   = ["crowbar-validate-databags"]
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "kwalify"
+  spec.add_runtime_dependency "kwalify", "~> 0.7"
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
