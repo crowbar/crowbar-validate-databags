@@ -5,8 +5,8 @@ require "crowbar/validate/databags/version"
 Gem::Specification.new do |spec|
   spec.name          = "crowbar-validate-databags"
   spec.version       = Crowbar::Validate::Databags::VERSION
-  spec.authors       = ["Itxaka Serrano Garcia"]
-  spec.email         = ["igarcia@suse.com"]
+  spec.authors       = ["Itxaka Serrano Garcia", "Rick Salevsky"]
+  spec.email         = ["igarcia@suse.com", "rsalevsky@suse.com"]
 
   spec.summary       = %q{Validates databags of crowbar.}
   spec.homepage      = "http://github.com/itxaka/crowbar-validate-databags"
