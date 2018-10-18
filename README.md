@@ -1,4 +1,4 @@
-# Crowbar::Validate::Databags
+# crowbar-validate-databags
 
 A gem to validate crowbar databags
 
