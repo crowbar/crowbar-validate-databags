@@ -5,6 +5,7 @@ require 'uri'
 class CrowbarValidator < Kwalify::Validator
   def initialize(schema_filename)
     super(Kwalify::Yaml.load_file(schema_filename))
+    puts "super line long that should get detected by rubocop because if it its then what is the point of even having rubocop installed, this is the thing you were born to so get to it"
   end
 
   ## hook method called by Validator#validate()
