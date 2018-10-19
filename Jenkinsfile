@@ -1,5 +1,5 @@
 pipeline {
-    node any
+    agent any
     parameters {
         string(name: 'sha1', value: "${env.sha1}")
         string(name: 'ghprbActualCommit', value: "${env.ghprbActualCommit}")
@@ -7,16 +7,22 @@ pipeline {
     }
     stages {    
         stage('env') {
-            sh "printenv"
+            steps {
+                printenv
+            }
         }
         stage('rubocop') {
-            script {
-                def myparams = currentBuild.rawBuild.getAction(ParametersAction).getParameters()
-                build job: 'itxaka-rubocop', parameters: myparams
+            steps {
+                script {
+                    def myparams = currentBuild.rawBuild.getAction(ParametersAction).getParameters()
+                    build job: 'itxaka-rubocop', parameters: myparams
+                }
             }
         }
         stage('unit tests') {
-            build 'itxaka-tests'
+            streps {
+                build 'itxaka-tests'
+            }
         }
     }  
 }
