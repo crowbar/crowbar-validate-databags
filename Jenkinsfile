@@ -1,18 +1,21 @@
-node {
-    environment {
-        ghprbTargetBranch = env.ghprbTargetBranch
-        ghprbActualCommit = env.ghprbActualCommit
-    }
-    stage('env') {
-        sh "echo 'sha=${env.sha1}'"
-        sh "echo 'actualcommit=${ghprbActualCommit}'"
-        sh "echo 'targetBranch=${ghprbTargetBranch}'"
-    }
-    stage('rubocop') {
-        build job: 'itxaka-rubocop', parameters: [string(name: 'sha1', value: "${env.sha1}")]
-    }
-
-    stage('unit tests') {
-        build 'itxaka-tests'
+pipeline {
+    node {
+        parameters {
+            string(name: 'sha1', value: "${env.sha1}")
+            string(name: 'ghprbActualCommit', value: "${env.ghprbActualCommit}")
+            string(name: 'ghprbTargetBranch', value: "${env.ghprbTargetBranch}")
+        }
+        stage('env') {
+            sh "printenv"
+        }
+        stage('rubocop') {
+            script {
+                def myparams = currentBuild.rawBuild.getAction(ParametersAction).getParameters()
+                build job: 'itxaka-rubocop', parameters: myparams
+            }  
+        }
+        stage('unit tests') {
+            build 'itxaka-tests'
+        }
     }
 }
