@@ -1,6 +1,11 @@
-stage('1') {
-  build 'itxaka-rubocop'
-stage('2') {
-  build 'itxaka-tests'
-}
+node {
+    def mvnHome = tool 'M3'
 
+    stage('rubocop') {
+        build 'itxaka-rubocop'
+    }
+
+    stage('unit tests') {
+        build 'itxaka-tests'
+    }
+}
