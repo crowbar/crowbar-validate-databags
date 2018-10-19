@@ -1,7 +1,6 @@
 stage('1') {
-  build job: 'itxaka-rubocop', parameters: [string(name: 'sha1', value: '${sha1}')]
-}
+  build job: 'itxaka-rubocop'
 stage('2') {
-  build job: 'itxaka-tests', parameters: [string(name: 'sha1', value: '${sha1}')]
+  build job: 'itxaka-tests'
 }
 
