@@ -7,6 +7,6 @@ node {
         ]
     }
     stage('unit tests') {
-        build job: 'itxaka-tests', paremeters: [string(name: "sha1", value: "${env.sha1}")]
+        build job: 'itxaka-tests', parameters: [string(name: "sha1", value: "${env.sha1}")]
     }
 }
