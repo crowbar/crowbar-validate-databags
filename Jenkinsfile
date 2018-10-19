@@ -1,6 +1,6 @@
 stage('1') {
-  build job: 'itxaka-rubocop'
+  build 'itxaka-rubocop'
 stage('2') {
-  build job: 'itxaka-tests'
+  build 'itxaka-tests'
 }
 
