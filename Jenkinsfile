@@ -7,6 +7,9 @@ node('openstack-mkcloud') {
         ]
     }
     stage('unit tests') {
-        build job: 'itxaka-tests', parameters: [string(name: "sha1", value: "${env.sha1}")]
+        build job: 'itxaka-tests', parameters: [
+            string(name: "sha1", value: "${env.sha1}"),
+            string(name: "ghprbActualCommit", value: "${env.ghprbActualCommit}"), 
+        ]
     }
 }
