@@ -1,4 +1,4 @@
-node {
+node('openstack-mkcloud') {
     stage('rubocop') {
         build job: 'itxaka-rubocop', parameters: [
             string(name: "sha1", value: "${env.sha1}"), 
