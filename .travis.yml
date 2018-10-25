@@ -3,3 +3,9 @@ language: ruby
 rvm:
   - 2.1.9
 before_install: gem install bundler -v 1.16.1
+deploy:
+  provider: rubygems
+  api_key:
+    secure: "FGp9C8nO47WgQqI/yml1jDUQ6+B3rVeNtwSBnapXG/8ivb8rUHFKkkwnh4ayxMmIyUpqtJiqq6la94mtNYve1hI1sbp3siWvHac7RUJ8vQbdioFktSuxKZ41y0p4o00Mu1SE+8rjJVIzKn+lryLO1LglINrjVHC/ky7DNe9iSwtjjh1PYlgVzMoh+9HMUjJfd+x78zkrA0SLS3A+n1BJsL4QfnGgBlF3dbXa/GAmiFL4k1VYqfzVo9ApBpVJHbrGYEBn5B4bU6GRoFvN9Yy4ZtiKmY9sVkWMxrwe3mn/MQjCkBCTVi+Idp3mMj2yQqjMbs/iBIDGwyzaexzJWakmKhoQ/NEFzutq4w9oujbtA+Ts07SPdcW0jPR6wYdfeOxxzQwojg5HMXrB03LzTwE+k1oYLZJxQ8qJxB88jY7QhOKr+Cylxn0r9/rlTOZgDtDPGd/tTRPKQci5SK44RCBCB7whvMhUz+ZGyBZzzKFesskULmUIMo0sARY/+EBf61AYrKxT6ESMjsa3LwuYbsSPbVOqb1uhnVtBnrlDiTJmPAnjwXlkKbp6GxJ4nWHSJt25mSVuXvBZ9FmrXRYMT3bSvyI608lbf95Eyn9s15493U0+PVfQv3l8Zomb046jjprPDjz0F2PfQQsaPsk1fquvjTT/KSI0LuVz3GDb54Z/VN4="
+  on:
+    tags: true
