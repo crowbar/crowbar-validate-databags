@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["igarcia@suse.com", "rsalevsky@suse.com"]
 
   spec.summary       = %q{Validates databags of crowbar.}
-  spec.homepage      = "http://github.com/itxaka/crowbar-validate-databags"
+  spec.homepage      = "http://github.com/crowbar/crowbar-validate-databags"
   spec.license       = "GPL-2.0"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
